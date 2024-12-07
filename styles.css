@@ -1,0 +1,178 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Background Animation */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://t4.ftcdn.net/jpg/00/65/48/25/360_F_65482539_C0ZozE5gUjCafz7Xq98WB4dW6LAhqKfs.jpg') no-repeat center center/cover;
+    z-index: -1;
+    animation: creativeZoom 12s infinite alternate;
+}
+
+@keyframes creativeZoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+/* Twinkling Stars */
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 5s infinite ease-in-out;
+}
+
+.star:nth-child(2) {
+    top: 30%;
+    left: 25%;
+    animation-delay: 1.5s;
+}
+
+.star:nth-child(3) {
+    top: 60%;
+    left: 75%;
+    animation-delay: 3s;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+/* Creative Header */
+header h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: glow 2.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #6d19ce, 0 0 20px #9449f6, 0 0 30px #bf95f6;
+    }
+    100% {
+        text-shadow: 0 0 20px #89f7fe, 0 0 40px #fbc2eb, 0 0 60px #a1c4fd;
+    }
+}
+
+/* Animated Search Input */
+input {
+    padding: 12px;
+    font-size: 18px;
+    width: 80%;
+    max-width: 400px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    outline: none;
+    animation: float 4s infinite alternate;
+}
+
+input::placeholder {
+    color: white;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Destination Cards */
+.destination-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.destination-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    margin: 15px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transform: translateY(0);
+    animation: bounce 4s infinite;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.destination-card:hover {
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.destination-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.destination-card h3 {
+    padding: 10px;
+    background: linear-gradient(120deg, #3498db, #8e44ad);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.destination-card p {
+    padding: 10px;
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+}
